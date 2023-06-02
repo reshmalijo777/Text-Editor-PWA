@@ -7,6 +7,8 @@ const { precacheAndRoute } = require('workbox-precaching/precacheAndRoute');
 
 precacheAndRoute(self.__WB_MANIFEST);
 
+const cacheName = 'static-resources'
+
 const pageCache = new CacheFirst({
   cacheName: 'page-cache',
   plugins: [
@@ -19,6 +21,16 @@ const pageCache = new CacheFirst({
   ],
 });
 
+const matchCallback = ({ request }) => {
+  console.log(request);
+  return (
+    // CSS
+    request.destination === 'style' ||
+    // JavaScript
+    request.destination === 'script'
+  );
+};
+
 warmStrategyCache({
   urls: ['/index.html', '/'],
   strategy: pageCache,
@@ -26,5 +38,16 @@ warmStrategyCache({
 
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
-// TODO: Implement asset caching
-registerRoute();
+registerRoute(
+  matchCallback,
+  new StaleWhileRevalidate({
+    // Name of the cache storage.
+    cacheName,
+    plugins: [
+      // This plugin will cache responses with these headers to a maximum-age of 30 days
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+    ]
+  })
+);
