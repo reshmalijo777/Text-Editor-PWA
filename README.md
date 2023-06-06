@@ -70,4 +70,4 @@ The application will run if the following criteria are met:
 
 If you have any Questions,<br>
 Contact me at: -[Email](snowley777@gmail.com)<br>
-My GitHub Repository: -[GitHub](https://github.com/reshmalijo777/Social-Network-API)
+My GitHub Repository: -[GitHub](https://github.com/reshmalijo777/Text-Editor-PWA)
