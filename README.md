@@ -64,7 +64,7 @@ The application will run if the following criteria are met:
 
 ## Screenshots
 
-![image](<img width="959" alt="pwa 1" src="https://github.com/reshmalijo777/Text-Editor-PWA/assets/128992593/80fd85d7-3a93-4b7a-b6bc-30361d696613">)
+<img width="959" alt="pwa 1" src="https://github.com/reshmalijo777/Text-Editor-PWA/assets/128992593/80fd85d7-3a93-4b7a-b6bc-30361d696613">
 
 <img width="971" alt="pwa 2" src="https://github.com/reshmalijo777/Text-Editor-PWA/assets/128992593/cb7c02d3-2df2-4469-9fc2-0cee78fe504f">
 
