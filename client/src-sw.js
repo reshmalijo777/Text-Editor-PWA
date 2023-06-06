@@ -1,4 +1,5 @@
 const { offlineFallback, warmStrategyCache } = require('workbox-recipes');
+const { StaleWhileRevalidate } = require('workbox-strategies');
 const { CacheFirst } = require('workbox-strategies');
 const { registerRoute } = require('workbox-routing');
 const { CacheableResponsePlugin } = require('workbox-cacheable-response');
@@ -27,7 +28,9 @@ const matchCallback = ({ request }) => {
     // CSS
     request.destination === 'style' ||
     // JavaScript
-    request.destination === 'script'
+    request.destination === 'script'||
+
+    request.destination==='worker'
   );
 };
 
@@ -36,7 +39,7 @@ warmStrategyCache({
   strategy: pageCache,
 });
 
-registerRoute(({ request }) => request.mode === 'navigate', pageCache);
+registerRoute(({ request }) => request.mode === 'page', pageCache);
 
 registerRoute(
   matchCallback,

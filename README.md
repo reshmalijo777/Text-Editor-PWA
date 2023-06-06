@@ -5,6 +5,8 @@ Challenge-19
 
  To build a text editor that runs in the browser. The app will be a single-page application that meets the PWA criteria. Additionally, it will feature a number of data persistence techniques that serve as redundancy in case one of the options is not supported by the browser. The application will also function offline.
 
+Deployed Application: https://heroku-texteditor-pwa.herokuapp.com/
+
 ## User Story
 
 ```md
@@ -59,6 +61,10 @@ The application will run if the following criteria are met:
 * `npm run build` runs the webpack build script in the client.
 * `npm run install` installs the dependencies for the client.
 * `npm run client` starts the client without the server.
+
+## Screenshots
+
+
 
 ## Questions
 
